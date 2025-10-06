@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation System</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f8ea; text-align: center; }
+        .container { background-color: white; margin: 50px auto; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 500px; }
+        input { width: 95%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; }
+        button { background-color: #4CAF50; color: white; padding: 12px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #45a049; }
+        h1 { color: #333; }
+        .result { margin-top: 20px; font-size: 20px; color: #2e8b57; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Crop Recommendation System 🌱</h1>
+        <form action="{{ action_url }}" method="post">
+            <input type="text" name="N" placeholder="Ratio of Nitrogen (kg/ha)" required="required" />
+            <input type="text" name="P" placeholder="Ratio of Phosphorous (kg/ha)" required="required" />
+            <input type="text" name="K" placeholder="Ratio of Potassium (kg/ha)" required="required" />
+            <input type="text" name="temperature" placeholder="Temperature (°C)" required="required" />
+            <input type="text" name="humidity" placeholder="Relative Humidity (%)" required="required" />
+            <input type="text" name="ph" placeholder="pH value of the soil" required="required" />
+            <input type="text" name="rainfall" placeholder="Rainfall (mm)" required="required" />
+            <button type="submit">Recommend Crop</button>
+        </form>
+        {% if prediction_text %}
+        <div class="result">
+            {{ prediction_text }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
