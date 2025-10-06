@@ -3,5 +3,5 @@ numpy
 scikit-learn
 joblib
 lightgbm
-gunicorn
 pyngrok
+gunicorn
