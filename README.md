@@ -63,7 +63,7 @@ pip install -r requirements.txt
 ### 4. Run the Application
 Start the Flask server.
 
-##Windows
+## Windows
 
 py app.py
 ### 5. Access the Web App
